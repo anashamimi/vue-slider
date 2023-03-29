@@ -28,7 +28,7 @@
             </div>
             <div class="position-relative">
                 <div class="aside-slider">
-                    <div class="mini-img" :class="{'img-selected': activeIndex === index}" v-for="(image,index) in images" :key="index">
+                    <div class="mini-img" :class="{'img-selected': activeIndex === index}" v-for="(image,index) in images" :key="index" @click="selectImg(index)">
                         <img :src="'./'+images[index].image" :alt="images.title">
                     </div>
                 </div> 

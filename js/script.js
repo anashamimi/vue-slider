@@ -52,8 +52,11 @@ createApp({
             this.activeIndex --;
 
             if(this.activeIndex === -1){
-                this.activeIndex = this.images.length;
+                this.activeIndex = this.images.length -1;
             }
+        },
+        selectImg(index) {
+            this.activeIndex = index;
         }
     }
 }).mount('#app')
