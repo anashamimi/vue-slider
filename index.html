@@ -20,7 +20,23 @@
 
 <body>
     <div id="app">
-        
+        <div id="wrapper">
+            <div class="slider">
+                <div class="slide img-selected">
+                    <img :src="'./'+images[activeIndex].image" :alt="images[activeIndex].title">
+                </div>       
+            </div>
+            <div class="position-relative">
+                <div class="aside-slider">
+                    <div class="mini-img" :class="{'img-selected': activeIndex === index}" v-for="(image,index) in images" :key="index">
+                        <img :src="'./'+images.image" :alt="images.title">
+                    </div>
+                </div> 
+
+                <button id="up" @click="nextSlide"><i class="fa-solid fa-chevron-up"></i></button>
+                <button id="down" @click="prevSlide"><i class="fa-solid fa-chevron-down"></i></button>
+            </div>
+        </div>
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
