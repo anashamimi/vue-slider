@@ -29,12 +29,12 @@
             <div class="position-relative">
                 <div class="aside-slider">
                     <div class="mini-img" :class="{'img-selected': activeIndex === index}" v-for="(image,index) in images" :key="index">
-                        <img :src="'./'+images.image" :alt="images.title">
+                        <img :src="'./'+images[index].image" :alt="images.title">
                     </div>
                 </div> 
 
-                <button id="up" @click="nextSlide"><i class="fa-solid fa-chevron-up"></i></button>
-                <button id="down" @click="prevSlide"><i class="fa-solid fa-chevron-down"></i></button>
+                <button id="up" @click="prevSlide"><i class="fa-solid fa-chevron-up"></i></button>
+                <button id="down" @click="nextSlide"><i class="fa-solid fa-chevron-down"></i></button>
             </div>
         </div>
     </div>

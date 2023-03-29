@@ -43,9 +43,17 @@ createApp({
     methods: {
         nextSlide(){
             this.activeIndex ++;
+
+            if(this.activeIndex === this.images.length){
+                this.activeIndex = 0;
+            }
         },
         prevSlide(){
             this.activeIndex --;
+
+            if(this.activeIndex === -1){
+                this.activeIndex = this.images.length;
+            }
         }
     }
 }).mount('#app')
